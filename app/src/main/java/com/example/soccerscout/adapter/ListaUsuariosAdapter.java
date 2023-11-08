@@ -1,4 +1,4 @@
-package com.example.soccerscout.adapter;
+/*package com.example.soccerscout.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,4 +51,4 @@ public class ListaUsuariosAdapter extends RecyclerView.Adapter<ListaUsuariosAdap
             viewCorreo = itemView.findViewById(R.id.viewCorreo);
         }
     }
-}
+}*/

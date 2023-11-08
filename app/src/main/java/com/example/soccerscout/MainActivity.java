@@ -9,14 +9,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.soccerscout.db.DbAux;
-import com.example.soccerscout.usuarios.Usuario;
 import com.google.android.material.textfield.TextInputEditText;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,9 +47,12 @@ public class MainActivity extends AppCompatActivity {
                 String adminCorreo = correo.getText().toString();
                 String adminContra = contra.getText().toString();
 
-                Toast.makeText(MainActivity.this, adminCorreo, Toast.LENGTH_SHORT).show();
-                Toast.makeText(MainActivity.this, adminContra, Toast.LENGTH_SHORT).show();
-
+                if(adminCorreo.equals("admin") && adminContra.equals("1234")){
+                    correo.setText("");
+                    contra.setText("");
+                    Intent intent = new Intent(MainActivity.this, Admin.class);
+                    startActivity(intent);
+                }else {
                     if(entrar() == true){
                         correo.setText("");
                         contra.setText("");
@@ -64,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
                         correo.setText("");
                         contra.setText("");
                     }
+                }
+
+
 
 
 

@@ -1,74 +1,61 @@
+
 package com.example.soccerscout;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.MenuItem;
 
-import com.example.soccerscout.adapter.ListaUsuariosAdapter;
-import com.example.soccerscout.db.DbAux;
-import com.example.soccerscout.usuarios.Usuario;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Principal extends AppCompatActivity {
+public class Principal extends AppCompatActivity
+        implements BottomNavigationView
+        .OnNavigationItemSelectedListener {
 
-    RecyclerView listaUsuarios;
-    ArrayList<Usuario> ArrayUsuarios;
+    BottomNavigationView bottomNavigationView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-        listaUsuarios = findViewById(R.id.listaUsuarios);
+        bottomNavigationView
+                = findViewById(R.id.bottomNavigationView);
 
-        listaUsuarios.setLayoutManager(new LinearLayoutManager(this));
-
-        ArrayUsuarios = new ArrayList<>();
-
-        ListaUsuariosAdapter adapter = new ListaUsuariosAdapter(mostrarContactos());
-
-        listaUsuarios.setAdapter(adapter);
-
-
+        bottomNavigationView
+                .setOnNavigationItemSelectedListener(this);
+        bottomNavigationView.setSelectedItemId(R.id.user);
     }
+    FirstFragment firstFragment = new FirstFragment();
+    SecondFragment secondFragment = new SecondFragment();
+    ThirdFragment thirdFragment = new ThirdFragment();
 
-    public ArrayList<Usuario> mostrarContactos(){
+    @Override
+    public boolean
+    onNavigationItemSelected(@NonNull MenuItem item)
+    {
 
-        DbAux dbAux = new DbAux(Principal.this);
-        SQLiteDatabase db = dbAux.getWritableDatabase();
-
-        ArrayList<Usuario> listaUsuarios = new ArrayList<>();
-        Usuario usuario = null;
-        Cursor cursorUsuario = null;
-
-        cursorUsuario = db.rawQuery("SELECT * FROM usuarios", null);
-
-        if (cursorUsuario.moveToFirst()){
-            do {
-                usuario = new Usuario();
-                usuario.setId(cursorUsuario.getInt(0));
-                usuario.setNombre(cursorUsuario.getString(1));
-                usuario.setCorreo(cursorUsuario.getString(2));
-                usuario.setContrasena(cursorUsuario.getString(3));
-
-                listaUsuarios.add(usuario);
-
-            }while(cursorUsuario.moveToNext());
-
+        if(item.getItemId()== R.id.user){
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.flFragment, firstFragment)
+                    .commit();
+            return true;
+        } else if (item.getItemId()== R.id.home) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.flFragment, secondFragment)
+                    .commit();
+            return true;
+        } else if (item.getItemId()== R.id.football) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.flFragment, thirdFragment)
+                    .commit();
+            return true;
         }
 
-        cursorUsuario.close();
-
-        return listaUsuarios;
+        return false;
     }
-
 }
