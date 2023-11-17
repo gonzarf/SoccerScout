@@ -36,6 +36,7 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:background="@drawable/rounded_borders"
+        android:clickable="false"
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@id/flFragment"
         app:layout_constraintEnd_toStartOf="@id/v2"
@@ -75,10 +76,10 @@
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/hlogo"
-        android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.1"/>
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/v1"
