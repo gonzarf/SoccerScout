@@ -17,6 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!--  TARJETA NUMERO 1-->
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardview1"
                 android:layout_width="0dp"
@@ -60,20 +62,43 @@
                         android:layout_height="0dp"
                         android:fontFamily="@font/robotomedium"
                         android:textSize="20dp"
-                        android:text="@string/app_name"
+                        android:text="Ubicación Campo"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="8dp"
                         app:layout_constraintTop_toBottomOf="@id/imagencampo1"
                         app:layout_constraintStart_toEndOf="@id/iconoubica"/>
+                    
+                    <ImageView
+                        android:id="@+id/iconofecha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/iconocalendario"
+                        app:layout_constraintTop_toBottomOf="@id/iconoubica"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/textofecha"/>
 
-
-
+                    <TextView
+                        android:id="@+id/textofecha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/robotomedium"
+                        android:text="10/10/2023"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="16dp"
+                        android:textSize="20dp"
+                        app:layout_constraintTop_toBottomOf="@id/textoubica"
+                        app:layout_constraintStart_toEndOf="@id/iconofecha"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
             </androidx.cardview.widget.CardView>
+
+            <!--  TARJETA NUMERO 2-->
+
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardview2"
@@ -85,23 +110,54 @@
                 app:layout_constraintStart_toEndOf="@+id/guiav1"
                 app:layout_constraintEnd_toStartOf="@id/guiav2">
 
-                <ImageView
-                    android:id="@+id/imagencampo2"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:src="@drawable/fotocampofutbol"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/app_name"/>
+
+                    <ImageView
+                        android:id="@+id/imagencampo2"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/fotocampofutbol"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <ImageView
+                        android:id="@+id/iconoubica2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/iconoubica"
+                        app:layout_constraintEnd_toStartOf="@id/textoubica2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imagencampo2" />
+
+                    <TextView
+                        android:id="@+id/textoubica2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ubicacion Campo"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/robotomedium"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toEndOf="@id/iconoubica2"
+                        app:layout_constraintTop_toBottomOf="@id/imagencampo2"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             </androidx.cardview.widget.CardView>
 
+
+            <!--  TARJETA NUMERO 3-->
+
+
+            
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardview3"
                 android:layout_width="0dp"
@@ -112,22 +168,52 @@
                 app:layout_constraintStart_toEndOf="@+id/guiav1"
                 app:layout_constraintEnd_toStartOf="@id/guiav2">
 
-                <ImageView
-                    android:id="@+id/imagencampo3"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:src="@drawable/fotocampofutbol"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/app_name"/>
+                    <ImageView
+                        android:id="@+id/imagencampo3"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/fotocampofutbol"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <ImageView
+                        android:id="@+id/iconoubica3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="12dp"
+                        android:src="@drawable/iconoubica"
+                        app:layout_constraintEnd_toStartOf="@id/textoubica3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imagencampo3" />
+
+                    <TextView
+                        android:id="@+id/textoubica3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ubicacion Campo"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/robotomedium"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toEndOf="@id/iconoubica3"
+                        app:layout_constraintTop_toBottomOf="@id/imagencampo3"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
             </androidx.cardview.widget.CardView>
+
+            <!--  TARJETA NUMERO 4-->
+
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardview4"
@@ -141,20 +227,47 @@
                 app:layout_constraintStart_toEndOf="@+id/guiav1"
                 app:layout_constraintEnd_toStartOf="@id/guiav2">
 
-                <ImageView
-                    android:id="@+id/imagencampo4"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:src="@drawable/fotocampofutbol"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/app_name"/>
+
+                    <ImageView
+                        android:id="@+id/imagencampo4"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/fotocampofutbol"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <ImageView
+                        android:id="@+id/iconoubica4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="12dp"
+                        android:src="@drawable/iconoubica"
+                        app:layout_constraintEnd_toStartOf="@id/textoubica4"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imagencampo4" />
+
+                    <TextView
+                        android:id="@+id/textoubica4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ubicacion Campo"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/robotomedium"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toEndOf="@id/iconoubica4"
+                        app:layout_constraintTop_toBottomOf="@id/imagencampo4"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
             </androidx.cardview.widget.CardView>
 
