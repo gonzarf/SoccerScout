@@ -8,17 +8,40 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/thirdFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Algorithms"
-        android:textColor="#43a047"
-        android:textSize="40sp"
-        android:textStyle="italic|bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:id="@+id/viewSinJugar"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="YA JUGADOS"
+        android:gravity="center"
+        android:fontFamily="@font/robotomedium"
+        android:textSize="20dp"
+        android:background="@drawable/roundedtopborders"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@id/viewJugados"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/viewJugados"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="POR JUGAR"
+        android:gravity="center"
+        android:fontFamily="@font/robotomedium"
+        android:textSize="20dp"
+        android:background="@drawable/roundedtopborders"
+        app:layout_constraintStart_toEndOf="@id/viewSinJugar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/fondoTarjetas"
+        app:layout_constraintTop_toBottomOf="@id/viewSinJugar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
