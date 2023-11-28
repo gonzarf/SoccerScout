@@ -1,13 +1,33 @@
 {
   "project_info": {
-    "project_number": "669709949284",
-    "project_id": "soccerscout-8fc58",
-    "storage_bucket": "soccerscout-8fc58.appspot.com"
+    "project_number": "132927330465",
+    "firebase_url": "https://soccerscout-50553-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "soccerscout-50553",
+    "storage_bucket": "soccerscout-50553.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:669709949284:android:9404364e31fac43f208271",
+        "mobilesdk_app_id": "1:132927330465:android:e842dd3d99293d5ae4f8e0",
+        "android_client_info": {
+          "package_name": "com.example.introduccion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl5aDzcGriC2iLwHZmJ-3yPLYPZKkO-EA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132927330465:android:178ca03036e1e828e4f8e0",
         "android_client_info": {
           "package_name": "com.example.soccerscout"
         }
@@ -15,7 +35,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCtws88keIqEgAeSUB0oPowaVYCfRTINdo"
+          "current_key": "AIzaSyBl5aDzcGriC2iLwHZmJ-3yPLYPZKkO-EA"
         }
       ],
       "services": {
