@@ -1,12 +1,15 @@
 
 package com.example.soccerscout;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Principal extends AppCompatActivity
         implements BottomNavigationView
@@ -14,9 +17,10 @@ public class Principal extends AppCompatActivity
 
     BottomNavigationView bottomNavigationView;
 
+    FloatingActionButton btn_partidos;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
@@ -26,6 +30,16 @@ public class Principal extends AppCompatActivity
         bottomNavigationView
                 .setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.user);
+
+        btn_partidos = findViewById(R.id.botonPartidos);
+
+        btn_partidos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Principal.this, CrearPartido.class);
+                startActivity(intent);
+            }
+        });
     }
     FirstFragment firstFragment = new FirstFragment();
     SecondFragment secondFragment = new SecondFragment();
