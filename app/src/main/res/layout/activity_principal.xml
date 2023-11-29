@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/Cabecera"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -33,11 +34,13 @@
         app:layout_constraintEnd_toEndOf="@id/cabecera"/>
 
     <SearchView
+        android:id="@+id/barrabusqueda"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:background="@drawable/rounded_borders"
         android:clickable="true"
         android:padding="10dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@id/flFragment"
         app:layout_constraintEnd_toStartOf="@id/v2"
         app:layout_constraintStart_toEndOf="@id/v1"
@@ -70,6 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
         app:layout_constraintEnd_toStartOf="@id/v2"/>
 

@@ -3,11 +3,15 @@ package com.example.soccerscout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.SearchEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -22,12 +26,16 @@ public class Principal extends AppCompatActivity
 
     TextView placeholder;
 
+    SearchView barraBusqueda;
+
+    ConstraintLayout btn_crear;
+
+    Boolean mostrarboton = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
-
-
 
         bottomNavigationView
                 = findViewById(R.id.bottomNavigationView);
@@ -54,14 +62,25 @@ public class Principal extends AppCompatActivity
     public boolean
     onNavigationItemSelected(@NonNull MenuItem item) {
 
+        //mostrarboton = true;
+
         if(item.getItemId()== R.id.user){
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.flFragment, firstFragment)
                     .commit();
-            placeholder=(TextView) findViewById(R.id.titulo);
 
+            placeholder=(TextView) findViewById(R.id.titulo);
             placeholder.setText("PARTIDOS");
+
+            barraBusqueda = (SearchView) findViewById(R.id.barrabusqueda);
+
+            if(mostrarboton == false){
+                btn_partidos.setVisibility(View.VISIBLE);
+                barraBusqueda.setVisibility(View.VISIBLE);
+                mostrarboton = true;
+            }
+
 
             return true;
         } else if (item.getItemId()== R.id.home) {
@@ -71,14 +90,34 @@ public class Principal extends AppCompatActivity
                     .commit();
 
             placeholder=(TextView) findViewById(R.id.titulo);
+            placeholder.setText("MI CUENTA");
+            barraBusqueda = (SearchView) findViewById(R.id.barrabusqueda);
 
-            placeholder.setText("PERFIL");
+
+            if(mostrarboton == true){
+                btn_partidos.setVisibility(View.INVISIBLE);
+                barraBusqueda.setVisibility(View.INVISIBLE);
+                mostrarboton = false;
+            }
+
             return true;
         } else if (item.getItemId()== R.id.football) {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.flFragment, thirdFragment)
                     .commit();
+
+            placeholder=(TextView) findViewById(R.id.titulo);
+            placeholder.setText("MIS PARTIDOS");
+
+            barraBusqueda = (SearchView) findViewById(R.id.barrabusqueda);
+
+
+            if(mostrarboton == true){
+                btn_partidos.setVisibility(View.INVISIBLE);
+                barraBusqueda.setVisibility(View.INVISIBLE);
+                mostrarboton = false;
+            }
             return true;
         }
 
