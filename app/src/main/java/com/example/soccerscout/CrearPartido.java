@@ -1,5 +1,6 @@
 package com.example.soccerscout;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,8 +14,10 @@ import com.example.soccerscout.adapter.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.ktx.Firebase;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +31,8 @@ public class CrearPartido  extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.crearpartido);
+
+        FirebaseApp.initializeApp(this);
 
         mfirestore = FirebaseFirestore.getInstance();
 
@@ -65,11 +70,8 @@ public class CrearPartido  extends AppCompatActivity {
         u1.numero = numeroPartido;
 
         map.put(nombrePartido, u1);
-        map.put(fechaPartido, u1);
-        map.put(horaPartido, u1);
-        map.put(numeroPartido, u1);
 
-        mfirestore.collection("SoccerScout").document(nombrePartido)
+        mfirestore.collection("SoccerScout").document("Partido")
                 .set(map)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
