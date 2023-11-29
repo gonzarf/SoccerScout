@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/robotoblack"
-        android:text="PARTIDOS"
+        android:text="@string/Titulo"
         android:textSize="40dp"
         android:textColor="@color/titulos"
         android:layout_marginStart="10dp"

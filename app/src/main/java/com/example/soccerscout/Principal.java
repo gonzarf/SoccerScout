@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,10 +20,14 @@ public class Principal extends AppCompatActivity
 
     FloatingActionButton btn_partidos;
 
+    TextView placeholder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
+
+
 
         bottomNavigationView
                 = findViewById(R.id.bottomNavigationView);
@@ -47,20 +52,27 @@ public class Principal extends AppCompatActivity
 
     @Override
     public boolean
-    onNavigationItemSelected(@NonNull MenuItem item)
-    {
+    onNavigationItemSelected(@NonNull MenuItem item) {
 
         if(item.getItemId()== R.id.user){
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.flFragment, firstFragment)
                     .commit();
+            placeholder=(TextView) findViewById(R.id.titulo);
+
+            placeholder.setText("PARTIDOS");
+
             return true;
         } else if (item.getItemId()== R.id.home) {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.flFragment, secondFragment)
                     .commit();
+
+            placeholder=(TextView) findViewById(R.id.titulo);
+
+            placeholder.setText("PERFIL");
             return true;
         } else if (item.getItemId()== R.id.football) {
             getSupportFragmentManager()

@@ -140,7 +140,7 @@
         android:layout_height="wrap_content"
         android:isIndicator="true"
         android:numStars="5"
-        android:rating="4"
+        android:rating="3.5"
         android:stepSize="0.5"
         style="?android:attr/ratingBarStyleSmall"
         app:layout_constraintEnd_toStartOf="@id/v2"
